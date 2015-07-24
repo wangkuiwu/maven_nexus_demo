@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheelview="http://schemas.android.com/apk/res-auto"
+    android:background="#ff000000"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <cn.skw.widget.WheelView
+        android:id="@+id/wheel_view"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:background="#ffffffff"
+        wheelview:item_height="48dip"
+        wheelview:select_color="#ffaa0000"
+        wheelview:indicator_color="#ffe1e1e1" />
+
+</RelativeLayout>
