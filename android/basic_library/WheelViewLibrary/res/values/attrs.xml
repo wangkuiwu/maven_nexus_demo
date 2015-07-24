@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- WheelView 的属性 -->  
+    <declare-styleable name="WheelView">
+        <!-- [必需]数据数组 例如， @array/data_array -->
+        <attr name="data_array" format="reference" />
+        <!-- [可选]每一项的高度(默认是自适应)， 例如， 40dp -->
+        <attr name="item_height" format="dimension" />
+        <!-- [可选]可见的选项数目(默认3)， 例如， 5 -->
+        <attr name="display_number" format="integer" />
+        <!-- [可选]默认的选中项(默认0)， 例如， 1 -->
+        <attr name="current_item" format="integer" />
+        <!-- [可选]指示线的占宽比(默认是0.8) 例如， 1.0 -->
+        <attr name="indicator_ratio" format="float" />
+        <!-- [可选]指示线的颜色 例如， ff0000 -->
+        <attr name="indicator_color" format="color" />
+        <!-- [可选]选中字体的颜色 例如， ff0000 -->
+        <attr name="select_color" format="color" />
+        <!-- [可选]未选中字体的颜色 例如， ff0000 -->
+        <attr name="unselect_color" format="color" />
+    </declare-styleable>
+
+</resources>
