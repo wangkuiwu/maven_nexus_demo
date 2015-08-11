@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
     }
         
     private void initView() {
-        int ret = Math.plus(5, 10);
+        int ret = Math.plus(10, 10);
         TextView tvShow = (TextView)findViewById(R.id.tv);
         tvShow.setText("ret: "+ret);
     }

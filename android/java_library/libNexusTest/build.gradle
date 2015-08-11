@@ -10,6 +10,13 @@ buildscript {
 
 apply plugin: 'com.android.application'
 
+repositories {
+    maven {
+        // 本地服务器中WheelView仓库的路径
+        url "http://127.0.0.1:8081/nexus/content/repositories/MathLib"
+    } 
+}
+
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -47,6 +54,5 @@ android {
 }
 
 dependencies {
-    //compile 'com.skw.lib.widget:TrendView:0.0.1@aar'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.skw.java.util:MathLibrary:0.0.1'
 }

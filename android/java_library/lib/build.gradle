@@ -1,11 +1,12 @@
 apply plugin: 'java'
+apply plugin: 'maven' 
 
 // 指定group(发布时有用)
-group = 'com.skw.java.util'
+//group = 'com.skw.java.util'
 // 生成的lib或zip包的名称(默认是工程名)
-archivesBaseName = 'mathLib'
+//archivesBaseName = 'mathLib'
 // 指定版本号
-version = '0.0.1'
+//version = '0.0.1'
 
 sourceSets {
     main {
@@ -17,5 +18,39 @@ sourceSets {
         resources {
             srcDir 'resources'
         }
+    }
+}
+
+def isReleaseBuild() {
+    return VERSION_NAME.contains("SNAPSHOT") == false
+}
+def getRepositoryUsername() {
+    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+def getRepositoryPassword() {
+    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}
+afterEvaluate { project ->
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                pom.groupId = GROUP
+                pom.artifactId = POM_ARTIFACT_ID
+                pom.version = VERSION_NAME
+                repository(url: RELEASE_REPOSITORY_URL) {
+                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                }   
+                snapshotRepository(url: SNAPSHOT_REPOSITORY_URL) {
+                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                }   
+            }   
+        }   
+    }   
+
+    task sourceJar(type: Jar) { 
+        from sourceSets.main.allJava 
+    } 
+    artifacts {
+         archives sourceJar
     }
 }
