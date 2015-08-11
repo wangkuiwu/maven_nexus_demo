@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+// 指定group(发布时有用)
+group = 'com.skw.java.util'
+// 生成的lib或zip包的名称(默认是工程名)
+archivesBaseName = 'mathLib'
+// 指定版本号
+version = '0.0.1'
+
+sourceSets {
+    main {
+        // 指定"源码路径"在src目录下
+        java {
+            srcDir 'src'
+        }
+        // 指定"资源路径"在resources目录下
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
