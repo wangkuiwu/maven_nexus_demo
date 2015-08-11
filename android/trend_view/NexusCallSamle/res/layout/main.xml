@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:trendView="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="TrendView Day" />
+
+    <com.skw.lib.widget.TrendView
+        android:id="@+id/trend_view_day"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        trendView:font_direction="0" />
+
+    <TextView
+        android:id="@+id/tv_night"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="TrendView Night" />
+
+    <com.skw.lib.widget.TrendView
+        android:id="@+id/trend_view_night"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        trendView:font_direction="0" />
+
+
+</LinearLayout>

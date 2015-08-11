@@ -1,0 +1,58 @@
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+repositories {
+    maven {
+        url "http://127.0.0.1:8081/nexus/content/repositories/TrendView"
+    }   
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    dependencies {
+        //compile files('libs/android-support-v4.jar', 'libs/android-support-v7-appcompat.jar')
+    }
+
+    sourceSets {
+        main {
+            manifest {
+                srcFile 'AndroidManifest.xml'
+            }
+            java {
+                srcDir 'src'
+            }
+            res {
+                srcDir 'res'
+            }
+            assets {
+                srcDir 'assets'
+            }
+            resources {
+                srcDir 'src'
+            }
+            aidl {
+                srcDir 'src'
+            }
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    // cn.skw.widget是仓库的GROUP值，SelfWheelView是仓库的POM_ARTIFACT_ID值，1.0是仓库版本号，@aar是android库的后缀名(如果是jar包，则不需要@aar)
+    compile 'com.skw.lib.widget:TrendView:0.0.1@aar'
+}
